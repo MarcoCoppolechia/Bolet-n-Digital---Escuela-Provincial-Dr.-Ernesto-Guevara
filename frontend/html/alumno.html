@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Boletín · Alumno</title>
+    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="stylesheet" href="/frontend/css/alumno.css">
+</head>
+
+<body>
+    <header class="alumno-header"> <!-- Cambiado de admin-header a alumno-header -->
+        <div class="container">
+            <div class="logo">
+                <img src="/imagenes/logo.png" alt="Logo Colegio" class="admin-logo">
+                <h1>Mi Boletín Digital</h1>
+            </div>
+            <a href="index.html" id="logoutBtn" class="btn">Cerrar sesión</a>
+        </div>
+    </header>
+
+    <main class="alumno-main">
+        <div class="container boletin-container">
+            <!-- Cabecera del boletín -->
+            <div class="boletin-header">
+                <div class="header-left">
+                    <h2>Ciclo Superior de la ESO</h2>
+                    <p><strong>Curso:</strong> <span id="curso-alumno">7º 1º</span></p>
+                </div>
+                <div class="header-right">
+                    <p><strong>Año:</strong> <span id="anio-actual">2025</span></p>
+                    <p><strong>Nombre y Apellido:</strong> <span id="nombre-alumno">Marco Coppolechia</span></p>
+                </div>
+            </div>
+
+            <!-- Tabla de calificaciones -->
+            <div class="table-responsive">
+                <table class="boletin-table">
+                    <thead>
+                        <tr>
+                            <th>Asignaturas</th>
+                            <th>1er Informe (1C)</th>
+                            <th>2do Informe (1C)</th>
+                            <th>1er Cuatrimestre</th>
+                            <th>1er Informe (2C)</th>
+                            <th>2do Informe (2C)</th>
+                            <th>2do Cuatrimestre</th>
+                            <th>Nota Final</th>
+                        </tr>
+                    </thead>
+                    <tbody id="notas-tbody">
+                        <!-- Se llenará con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Boletín Digital · Colegio Provincial Dr. Ernesto Guevara</p>
+        </div>
+    </footer>
+
+    <script src="/frontend/js/alumno.js"></script>
+</body>
+
+</html>

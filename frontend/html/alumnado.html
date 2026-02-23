@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Alumnado · Boletín Digital</title>
+    <link rel="stylesheet" href="/frontend/css/admin.css">
+    <link rel="stylesheet" href="/frontend/css/alumnado.css">
+</head>
+
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <div class="logo">
+                <img src="../../imagenes/logo.png" alt="Logo Colegio" class="admin-logo">
+                <h1>Panel de Alumnado</h1>
+            </div>
+            <a href="index.html" class="btn">Cerrar sesión</a>
+        </div>
+    </header>
+    <nav class="admin-nav">
+        <ul>
+            <li><a href="#" class="tab-link active" data-tab="grades">Cargar Notas</a></li>
+            <li><a href="#" class="tab-link" data-tab="students">Lista de Alumnos</a></li>
+        </ul>
+    </nav>
+    <main class="admin-main">
+        <div class="container">
+            <!-- Pestaña Cargar Notas -->
+            <div id="grades" class="tab-content active">
+                <h2>Carga de Notas</h2>
+                <div class="table-container">
+                    <form id="gradeForm">
+                        <div class="form-group">
+                            <label>Curso</label>
+                            <select id="gradeCourse" required>
+                                <option value="">Seleccionar curso</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Alumno</label>
+                            <select id="gradeStudent" required>
+                                <option value="">Primero seleccione un curso</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Materia</label>
+                            <select id="gradeSubject" required>
+                                <option value="">Seleccionar materia</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo de Nota</label>
+                            <select id="gradeTipo" required>
+                                <option value="">Seleccionar tipo</option>
+                                <option value="informe1_c1">1er Informe (1C)</option>
+                                <option value="informe2_c1">2do Informe (1C)</option>
+                                <option value="cuatrimestre1">1er Cuatrimestre</option>
+                                <option value="informe1_c2">1er Informe (2C)</option>
+                                <option value="informe2_c2">2do Informe (2C)</option>
+                                <option value="cuatrimestre2">2do Cuatrimestre</option>
+                                <option value="nota_final">Nota Final</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Calificación (1-10)</label>
+                            <input type="number" id="gradeValue" min="1" max="10" step="0.1" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Guardar Nota</button>
+                    </form>
+                </div>
+                <div class="table-container" style="margin-top: 20px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <h3>Notas cargadas</h3>
+                        <div class="search-box">
+                            <input type="text" id="searchNotas" placeholder="Buscar alumno...">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                    </div>
+                    <table id="gradesTable">
+                        <thead>
+                            <tr>
+                                <th>Alumno</th>
+                                <th>Materia</th>
+                                <th>Tipo</th>
+                                <th>Nota</th>
+                                <th>Fecha</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pestaña Lista de Alumnos -->
+            <div id="students" class="tab-content">
+                <div class="section-header">
+                    <h2>Lista de Alumnos</h2>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="search-box">
+                            <input type="text" id="searchStudent" placeholder="Buscar alumno...">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                        <select id="filterCourseStudent"
+                            style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                            <option value="">Todos los cursos</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="studentsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Curso</th>
+                                <th>Acciones</th> 
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Modal para mostrar el boletín -->
+    <div id="modal" class="modal">
+        <div class="modal-content modal-lg"> <!-- modal-lg para más ancho -->
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Boletín del Alumno</h3>
+            <div id="modalBody" style="overflow-x: auto;">
+                <!-- Aquí se cargará el boletín -->
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../imagenes/logo.png" alt="Logo Colegio" class="footer-logo-img">
+                    <span>Colegio Provincial Dr. Ernesto Guevara</span>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2026 Boletín Digital. Todos los derechos reservados.</p>
+                    <p>Desarrollado por <strong>ByteStrong Center</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/frontend/js/alumnado.js"></script>
+</body>
+
+</html>

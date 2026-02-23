@@ -1,0 +1,199 @@
+/* ===== ESTILOS ESPECÍFICOS PARA EL PANEL DE ALUMNADO ===== */
+
+/* Barra de búsqueda (lupa) */
+.search-box {
+    position: relative;
+    display: inline-block;
+}
+
+.search-box input {
+    padding: 10px 35px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 250px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #888;
+    pointer-events: none;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #8B0000;
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.1);
+}
+
+/* Ajuste para el encabezado de la sección de notas */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .search-box input {
+        width: 180px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-box input {
+        width: 100%;
+    }
+}
+/* ===== FOOTER ===== */
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 30px 0 20px;
+    border-top: 4px solid #8B0000;
+    margin-top: auto;                /* Empuja el footer al fondo si hay poco contenido */
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+    background-color: white;          /* Para logos con transparencia */
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.footer-logo span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.footer-info {
+    text-align: right;
+    font-size: 14px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.footer-info strong {
+    color: #8B0000;           
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-info {
+        text-align: center;
+    }
+    .footer-logo {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .footer-logo-img {
+        height: 40px;
+    }
+}
+.admin-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-logo {
+    height: 55px;       /* Ajusta según el tamaño deseado */
+    width: auto;
+    background-color: white;    /* Fondo blanco para logos con transparencia */
+    border-radius: 5px;
+    padding: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Ajuste responsive para móviles */
+@media (max-width: 768px) {
+    .admin-header .logo {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    .admin-logo {
+        height: 35px;
+    }
+}
+.modal-lg {
+    max-width: 1200px !important;
+    width: 95%;
+}
+
+.boletin-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #8B0000;
+}
+
+.boletin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.boletin-table th {
+    background: #8B0000;
+    color: white;
+    padding: 10px;
+    font-size: 0.85rem;
+}
+
+.boletin-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.boletin-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+}

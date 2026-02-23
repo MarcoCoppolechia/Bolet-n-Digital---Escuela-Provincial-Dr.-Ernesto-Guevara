@@ -1,0 +1,271 @@
+/* ===== ESTILOS PARA EL PANEL DEL ALUMNO ===== */
+
+/* Header específico para alumno */
+.alumno-header {
+    background: #111;
+    color: white;
+    height: 100px;                /* Altura fija para control */
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #8B0000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.alumno-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alumno-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;                    /* Mucha separación entre logo y título */
+}
+
+.alumno-header .admin-logo {
+    height: 70px;                  /* Logo más grande */
+    width: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.alumno-header h1 {
+    color: #8B0000;
+    margin: 0;
+    font-size: 2rem;              /* Título más grande */
+    white-space: nowrap;
+}
+
+.alumno-header .btn {
+    background: #8B0000;
+    color: white;
+    padding: 0 25px;               /* Padding vertical cero, usamos altura fija */
+    height: 50px;                   /* Altura del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border: none;
+    cursor: pointer;
+    margin-left: 470px;              /* Separación con el menú */
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.alumno-header .btn:hover {
+    background-color: #B22222;
+    transform: scale(1.05);
+}
+
+/* Compensación por header fijo */
+body {
+    padding-top: 100px;             /* Mismo valor que la altura del header */
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .alumno-header {
+        height: auto;
+        padding: 15px 0;
+    }
+    .alumno-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .alumno-header .logo {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .alumno-header .admin-logo {
+        height: 60px;
+    }
+    .alumno-header h1 {
+        font-size: 1.5rem;
+    }
+    .alumno-header .btn {
+        margin-left: 0;
+        height: 45px;
+        padding: 0 20px;
+    }
+}
+/* Compensación por header fijo */
+body {
+    padding-top: 90px;
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenido principal */
+.alumno-main {
+    flex: 1;
+    padding: 30px 0;
+    background: #f5f5f5;
+}
+
+.boletin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.boletin-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Cabecera del boletín */
+.boletin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #8B0000;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.boletin-header h2 {
+    color: #8B0000;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.boletin-header p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.boletin-header strong {
+    color: #8B0000;
+}
+
+/* Tabla de calificaciones */
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.boletin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 1000px; /* Forzar scroll horizontal en pantallas pequeñas */
+}
+
+.boletin-table th {
+    background: #8B0000;
+    color: white;
+    padding: 15px 10px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.boletin-table td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: #2c3e50;
+}
+
+.boletin-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.boletin-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: #8B0000;
+    white-space: nowrap;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 20px 0;
+    border-top: 4px solid #8B0000;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    
+    .alumno-header .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .alumno-header .logo {
+        flex-direction: column;
+    }
+    
+    .alumno-header .admin-logo {
+        height: 40px;
+    }
+    
+    .alumno-header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .boletin-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .boletin-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .boletin-table th {
+        font-size: 0.8rem;
+        padding: 10px 5px;
+    }
+    
+    .boletin-table td {
+        padding: 8px 5px;
+        font-size: 0.85rem;
+    }
+    
+    .asistencia-grid {
+        grid-template-columns: 1fr;
+    }
+}

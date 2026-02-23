@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletín Digital · Inicio</title>
+    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <style>
+        /* Scroll suave y compensación por header fijo */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section,
+        .info-section,
+        .contact-section {
+            scroll-margin-top: 90px;
+            /* altura del header + margen */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img alt="Logo Guevara" src="/imagenes/logo.png" class="logo-header-img">
+                <h1>Colegio Provincial Dr. Ernesto Guevara</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#" id="loginBtn" class="nav-link">Iniciar Sesión</a></li>
+                    <li><a href="#" id="registerBtn" class="nav-link">Registrarse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Sección Hero (Inicio) -->
+            <section id="inicio" class="hero">
+                <h1>Boletín Digital</h1>
+                <p>Sistema de gestión de calificaciones · Colegio Provincial Dr. Ernesto Guevara</p>
+            </section>
+
+            <div class="forms-row">
+                <!-- INICIAR SESIÓN -->
+                <div class="form-box">
+                    <h2>Iniciar Sesión</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" id="loginEmail" placeholder="ejemplo@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contraseña</label>
+                            <input type="password" id="loginPassword" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn">Ingresar</button>
+                        <div id="loginMessage" class="message"></div>
+                    </form>
+                </div>
+
+                <!-- REGISTRARSE -->
+                <div class="form-box">
+                    <h2>Registrarse</h2>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label>Nombre Completo</label>
+                            <input type="text" id="regNombre" placeholder="Ej: Juan Pérez" required>
+                        </div>
+                        <div class="form-group">
+                            <label>DNI</label>
+                            <input type="text" id="regDni" placeholder="12345678" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" id="regEmail" placeholder="ejemplo@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contraseña (mín. 6 caracteres)</label>
+                            <input type="password" id="regPassword" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Rol</label>
+                            <select id="regRol" required>
+                                <option value="">Seleccione un rol</option>
+                                <option value="admin">Administrador</option>
+                                <option value="alumnado">Departamento de Alumnado</option>
+                                <option value="alumno">Alumno</option>
+                            </select>
+                        </div>
+                        <div id="cursoField" style="display: none;">
+                            <div class="form-group">
+                                <label>Curso</label>
+                                <select id="regCurso" required>
+                                    <option value="">Seleccione curso</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">Crear Cuenta</button>
+                        <div id="registerMessage" class="message"></div>
+                    </form>
+                    <div class="separator">
+                        <span>o</span>
+                    </div>
+                    <p class="info-text">
+                        ¿Ya tenés cuenta? Completá el formulario de la izquierda.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección Sobre el Boletín Digital -->
+            <section id="sobre" class="info-section">
+                <h2>Sobre el Boletín Digital</h2>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="card-icon">📘</div>
+                        <h3>Boletín Digital</h3>
+                        <p>Sistema web desarrollado por ByteStrong Center para el Colegio Provincial Dr. Ernesto
+                            Guevara.
+                            Permite la gestión digital de calificaciones, reemplazando los boletines en papel y
+                            brindando
+                            acceso centralizado a la información académica.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">🎯</div>
+                        <h3>Objetivo</h3>
+                        <p>Brindar un espacio digital que permita la gestión y carga de calificaciones de manera
+                            eficiente y
+                            segura, facilitando el acceso a la información para toda la comunidad educativa.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">🧑‍🎓</div>
+                        <h3>Alcance</h3>
+                        <p>Destinado a administradores, personal de alumnado y alumnos de 7mo año. Proyectado para
+                            expandirse a toda la institución en próximas versiones.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Nuestra Institución (Nosotros) -->
+            <section id="nosotros" class="contact-section">
+                <h2>Nuestra Institución</h2>
+                <div class="contact-content">
+                    <div class="contact-image">
+                        <img src="../../imagenes/esc.jpg" alt="Colegio Provincial Dr. Ernesto Guevara">
+                    </div>
+                    <div class="contact-info">
+                        <h3>Colegio Provincial Dr. Ernesto Guevara</h3>
+                        <p><strong>Dirección:</strong> Río Candelaria 3460, V9420 Río Grande, Tierra del Fuego</p>
+                        <p><strong>Teléfono:</strong> (+54) 2964 30-0532</p>
+                        <p><strong>Email:</strong> cpdeguevara.sec@tdf.edu.ar</p>
+                        <p><strong>Horario de atención:</strong> Lunes a Viernes 7:00 a.m a 11:00 p.m.</p>
+                        <p><strong>Redes sociales:</strong></p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/colegioguevara/" class="social-link">📘 Facebook</a>
+                            <a href="https://www.instagram.com/cpdeg_tecnica/" class="social-link">📷 Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../imagenes/logo.png" alt="Logo Colegio" class="footer-logo-img">
+                    <span>Colegio Provincial Dr. Ernesto Guevara</span>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2026 Boletín Digital. Todos los derechos reservados.</p>
+                    <p>Desarrollado por <strong>ByteStrong Center</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const API_URL = 'http://localhost:5000/api';
+
+        // ========== CARGAR CURSOS DESDE EL BACKEND ==========
+        async function loadCursos() {
+            try {
+                const response = await fetch(`${API_URL}/curso`);
+                if (!response.ok) throw new Error('Error al cargar cursos');
+                const cursos = await response.json();
+                const select = document.getElementById('regCurso');
+                select.innerHTML = '<option value="">Seleccionar curso</option>';
+                cursos.forEach(curso => {
+                    const option = document.createElement('option');
+                    option.value = curso.id;
+                    option.textContent = curso.año + '° ' + curso.division;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error cargando cursos:', error);
+            }
+        }
+
+        // ========== MOSTRAR/OCULTAR CAMPO DE CURSO SEGÚN ROL ==========
+        document.getElementById('regRol').addEventListener('change', function () {
+            const cursoField = document.getElementById('cursoField');
+            const regCurso = document.getElementById('regCurso');
+            if (this.value === 'alumno') {
+                cursoField.style.display = 'block';
+                regCurso.required = true;   // activar required
+            } else {
+                cursoField.style.display = 'none';
+                regCurso.required = false;  // desactivar required
+            }
+        });
+        // ========== REGISTRO ==========
+        document.getElementById('registerForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('regNombre').value.trim();
+            let dni = document.getElementById('regDni').value.trim().replace(/\./g, '');
+            const email = document.getElementById('regEmail').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const rol = document.getElementById('regRol').value;
+            let id_curso = null;
+
+            // Validaciones básicas
+            if (!nombre || !dni || !email || !password || !rol) {
+                showMessage('registerMessage', 'Todos los campos son obligatorios', 'error');
+                return;
+            }
+            if (password.length < 6) {
+                showMessage('registerMessage', 'La contraseña debe tener al menos 6 caracteres', 'error');
+                return;
+            }
+
+            // Validar curso si el rol es alumno
+            if (rol === 'alumno') {
+                id_curso = document.getElementById('regCurso').value;
+                if (!id_curso) {
+                    showMessage('registerMessage', 'Debe seleccionar un curso', 'error');
+                    return;
+                }
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nombre, dni, email, password, rol, id_curso })
+                });
+                console.log('Respuesta del servidor (status):', response.status);
+                const data = await response.json();
+                console.log('Datos de la respuesta:', data);
+                
+                if (response.ok) {
+                    showMessage('registerMessage', data.message, 'success');
+                    this.reset();
+                    document.getElementById('cursoField').style.display = 'none'; // Ocultar curso
+                    document.getElementById('regCurso').required = false;
+                } else {
+                    showMessage('registerMessage', data.error || 'Error en el registro', 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showMessage('registerMessage', 'Error de conexión con el servidor', 'error');
+            }
+        });
+
+        // ========== LOGIN ==========
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!email || !password) {
+                showMessage('loginMessage', 'Completá todos los campos', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+                    switch (data.user.rol) {
+                        case 'admin': window.location.href = 'admin.html'; break;
+                        case 'alumnado': window.location.href = 'alumnado.html'; break;
+                        case 'alumno': window.location.href = 'alumno.html'; break;
+                        default: alert('Rol no válido');
+                    }
+                } else {
+                    showMessage('loginMessage', data.error || 'Correo o contraseña incorrectos', 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showMessage('loginMessage', 'Error de conexión con el servidor', 'error');
+            }
+        });
+
+        // ========== FUNCIÓN PARA MOSTRAR MENSAJES ==========
+        function showMessage(elementId, text, type) {
+            const msg = document.getElementById(elementId);
+            msg.textContent = text;
+            msg.className = 'message ' + type;
+        }
+
+        // ========== INICIALIZACIÓN ==========
+        loadCursos(); // Cargar cursos al iniciar la página
+    </script>
+</body>
+
+</html>
