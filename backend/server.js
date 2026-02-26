@@ -497,7 +497,7 @@ app.get('/api/notas', async (req, res) => {
     try {
         const [rows] = await connection.promise().query(
             `SELECT n.id_nota, n.id_usuario, n.id_materia, n.tipo_nota, n.nota, n.fecha,
-                    u.nombre as alumno_nombre,
+                    u.nombre as alumno_nombre, u.dni as alumno_dni, u.email as alumno_email,
                     m.nombre as materia_nombre
              FROM nota n
              JOIN usuario u ON n.id_usuario = u.id_usuario

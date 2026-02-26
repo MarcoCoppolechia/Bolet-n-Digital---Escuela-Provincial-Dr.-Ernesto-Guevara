@@ -114,6 +114,7 @@ function renderStudents() {
         tr.innerHTML = `
             <td>${s.id}</td>
             <td>${s.nombre}</td>
+            <td>${s.dni || ''}</td>
             <td>${s.email}</td>
             <td>${s.curso_nombre || '-'}</td>
             <td>
@@ -123,7 +124,6 @@ function renderStudents() {
         tbody.appendChild(tr);
     });
 }
-
 // Búsqueda y filtro de alumnos
 document.getElementById('searchStudent')?.addEventListener('input', function(e) {
     const term = e.target.value.toLowerCase();
@@ -169,13 +169,15 @@ function filtrarNotas() {
     if (!searchTermNotas) {
         filteredNotas = [...notasOriginales];
     } else {
+        const term = searchTermNotas;
         filteredNotas = notasOriginales.filter(n => 
-            n.alumno_nombre.toLowerCase().includes(searchTermNotas)
+            n.alumno_nombre.toLowerCase().includes(term) ||
+            (n.alumno_dni && n.alumno_dni.toString().includes(term)) ||
+            (n.alumno_email && n.alumno_email.toLowerCase().includes(term))
         );
     }
     renderNotas();
 }
-
 function renderNotas() {
     const tbody = document.querySelector('#gradesTable tbody');
     if (!tbody) return;
@@ -184,6 +186,8 @@ function renderNotas() {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${nota.alumno_nombre}</td>
+            <td>${nota.alumno_dni || ''}</td>
+            <td>${nota.alumno_email || ''}</td>
             <td>${nota.materia_nombre}</td>
             <td>${traducirTipo(nota.tipo_nota)}</td>
             <td>${nota.nota}</td>
@@ -328,7 +332,11 @@ document.getElementById('gradeCourse')?.addEventListener('change', function() {
         studentSelect.innerHTML += '<option value="" disabled>No hay alumnos en este curso</option>';
     } else {
         alumnos.forEach(a => {
-            studentSelect.innerHTML += `<option value="${a.id}">${a.nombre}</option>`;
+            // Mostrar nombre, DNI y email en la opción
+            const opcion = document.createElement('option');
+            opcion.value = a.id;
+            opcion.textContent = `${a.nombre} (DNI: ${a.dni || 'N/A'}) - ${a.email}`;
+            studentSelect.appendChild(opcion);
         });
     }
 });

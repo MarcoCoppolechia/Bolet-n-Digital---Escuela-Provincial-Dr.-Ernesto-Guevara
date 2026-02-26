@@ -186,6 +186,8 @@
                         <thead>
                             <tr>
                                 <th>Alumno</th>
+                                <th>DNI</th>
+                                <th>Email</th>
                                 <th>Materia</th>
                                 <th>Tipo</th>
                                 <th>Nota</th>
@@ -193,9 +195,7 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <!-- Se llenará con JS -->
-                        </tbody>
+                        <tbody></tbody>
                     </table>
                 </div>
             </div>
@@ -203,19 +203,19 @@
     </main>
 
     <div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3 id="modalTitle">Nuevo Elemento</h3>
-        <form id="modalForm">
-            <div class="form-group">
-                <label id="modalLabel">Nombre</label>
-                <input type="text" id="modalInput" required>
-            </div>
-            <div id="modalExtra" style="display: none;"></div>
-            <button type="submit" class="btn-primary">Guardar</button>
-        </form>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Nuevo Elemento</h3>
+            <form id="modalForm">
+                <div class="form-group">
+                    <label id="modalLabel">Nombre</label>
+                    <input type="text" id="modalInput" required>
+                </div>
+                <div id="modalExtra" style="display: none;"></div>
+                <button type="submit" class="btn-primary">Guardar</button>
+            </form>
+        </div>
     </div>
-</div>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">

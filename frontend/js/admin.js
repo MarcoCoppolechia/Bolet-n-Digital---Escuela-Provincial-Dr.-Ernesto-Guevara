@@ -519,6 +519,8 @@ function renderNotas() {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${nota.alumno_nombre}</td>
+            <td>${nota.alumno_dni || ''}</td>
+            <td>${nota.alumno_email || ''}</td>
             <td>${nota.materia_nombre}</td>
             <td>${traducirTipo(nota.tipo_nota)}</td>
             <td>${nota.nota}</td>
@@ -530,7 +532,6 @@ function renderNotas() {
         tbody.appendChild(tr);
     });
 }
-
 function traducirTipo(tipo) {
     const tipos = {
         'informe1_c1': '1er Informe (1C)',
@@ -596,7 +597,10 @@ document.getElementById('gradeCourse')?.addEventListener('change', function() {
         studentSelect.innerHTML += '<option value="" disabled>No hay alumnos en este curso</option>';
     } else {
         alumnos.forEach(a => {
-            studentSelect.innerHTML += `<option value="${a.id}">${a.nombre}</option>`;
+            const opcion = document.createElement('option');
+            opcion.value = a.id;
+            opcion.textContent = `${a.nombre} (DNI: ${a.dni || 'N/A'}) - ${a.email}`;
+            studentSelect.appendChild(opcion);
         });
     }
 });
